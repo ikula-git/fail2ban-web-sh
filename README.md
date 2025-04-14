@@ -14,3 +14,8 @@ Ubuntu Debian CentOS Alpine
 > [!WARNING]
 >
 > 当前版本未配置GitHub加速，国内机器可能无法使用，建议使用国外机器进行部署
+>
+> cloudflare的SLL/TLS加密需要设置为完全（严格），否则会出现站点重定向次数过多而无法访问
+
+## 
+
