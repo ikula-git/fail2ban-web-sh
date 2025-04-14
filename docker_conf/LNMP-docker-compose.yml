@@ -1,0 +1,68 @@
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"      
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./conf.d:/etc/nginx/conf.d
+      - ./certs:/etc/nginx/certs
+      - ./html:/var/www/html
+      - ./log/nginx:/var/log/nginx
+    tmpfs:
+      - /var/cache/nginx:rw,noexec,nosuid,size=1024m
+
+
+  php:
+    image: kjlion/php:fpm-alpine
+    container_name: php
+    restart: always
+    volumes:
+      - ./html:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+
+  php74:
+    image: kjlion/php:7.4-fpm-alpine
+    container_name: php74
+    restart: always
+    volumes:
+      - ./html:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: webroot
+      MYSQL_USER: ikuiku
+      MYSQL_PASSWORD: ikuikupasswd
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pwebroot"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: always
+    volumes:
+      - ./redis:/data
+
+networks:
+  default:
+    enable_ipv6: true
+
