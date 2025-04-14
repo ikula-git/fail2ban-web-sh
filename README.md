@@ -17,5 +17,5 @@ Ubuntu Debian CentOS Alpine
 >
 > cloudflare的SSL/TLS加密需要设置为完全（严格），否则会出现站点重定向次数过多而无法访问
 
-[SSL/TLS]: https://github.com/ikula-git/fail2ban-web-sh/blob/main/picture/SSL_TLS.jpg?raw=true
+![SSL TLS 图片](https://raw.githubusercontent.com/ikula-git/fail2ban-web-sh/main/picture/SSL_TLS.jpg)
 
