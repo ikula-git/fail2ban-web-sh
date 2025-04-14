@@ -15,7 +15,7 @@ Ubuntu Debian CentOS Alpine
 >
 > 当前版本未配置GitHub加速，国内机器可能无法使用，建议使用国外机器进行部署
 >
-> cloudflare的SLL/TLS加密需要设置为完全（严格），否则会出现站点重定向次数过多而无法访问
+> cloudflare的SSL/TLS加密需要设置为完全（严格），否则会出现站点重定向次数过多而无法访问
 
-## 
+[SSL/TLS]: https://github.com/ikula-git/fail2ban-web-sh/blob/main/picture/SSL_TLS.jpg?raw=true
 
