@@ -6732,9 +6732,9 @@ echo -e "${gl_iku}命令行输入${gl_huang}iku${gl_iku}可快速启动脚本${g
 echo -e "${gl_iku}------------------------${gl_bai}"
 echo -e "${gl_iku}1.   ${gl_bai}系统信息查询"
 echo -e "${gl_iku}2.   ${gl_bai}系统更新"
-echo -e "${gl_iku}4.   ${gl_bai}基础工具"
-echo -e "${gl_iku}5.   ${gl_bai}Docker管理"
-echo -e "${gl_huang}6.   ${gl_bai}LDNMP建站"
+echo -e "${gl_iku}3.   ${gl_bai}基础工具"
+echo -e "${gl_iku}4.   ${gl_bai}Docker管理"
+echo -e "${gl_huang}5.   ${gl_bai}LDNMP建站"
 echo -e "${gl_iku}------------------------${gl_bai}"
 echo -e "${gl_iku}0.   ${gl_bai}退出脚本"
 echo -e "${gl_iku}------------------------${gl_bai}"
@@ -6743,9 +6743,9 @@ read -e -p "请输入你的选择: " choice
 case $choice in
   1) linux_ps ;;
   2) clear ; send_stats "系统更新" ; linux_update ;;
-  4) linux_tools ;;
-  5) linux_docker ;;
-  6) linux_ldnmp ;;
+  3) linux_tools ;;
+  4) linux_docker ;;
+  5) linux_ldnmp ;;
   0) clear ; exit ;;
   *) echo "无效的输入!" ;;
 esac
